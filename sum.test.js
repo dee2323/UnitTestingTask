@@ -63,7 +63,7 @@ test('probably ignore the first  input if greater than 1000', () => {
     const str2 = '1010';
     expect(sum((str1 + "," + str2))).toBe(+str1)
 })
-test('probably ignore the first  input if greater than 1000', () => {
+test('probably ignore the secound  input if greater than 1000', () => {
     const str1 = '1100'
     const str2 = '100';
     expect(sum((str1 + "," + str2))).toBe(+str2)
