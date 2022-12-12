@@ -10,6 +10,7 @@ const sum = (input) => {
                 case 1: {
                     if (numbers[0] < 0)
                         throw new Error('negatives not allowed,you entered ' + numbers[0])
+                    if (numbers[0] > 1000) return 0
                     return numbers[0]
                 }
                 case 2: {
@@ -19,6 +20,13 @@ const sum = (input) => {
                         throw new Error('negatives not allowed,you entered ' + numbers[0])
                     } else if (numbers[1] < 0) {
                         throw new Error('negatives not allowed,you entered ' + numbers[1])
+                    }
+                    if (numbers[0] > 1000 && numbers[1] > 1000) {
+                        return 0;
+                    } else if (numbers[0] > 1000) {
+                        return numbers[1]
+                    } else if (numbers[1] > 1000) {
+                        return numbers[0]
                     }
                     return numbers[0] + numbers[1]
                 }

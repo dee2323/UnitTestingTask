@@ -50,3 +50,21 @@ test('probably the secound negative number not allowed', () => {
         expect(e.message).toBe('negatives not allowed,you entered ' + str2);
     }
 })
+test('probable ignore adding one number and greater than 1000', () => {
+    const str = '10000'
+    expect(sum(str)).toBe(0)
+})
+test('probably ignore the input if greater than 1000', () => {
+    const str = '1010,1030'
+    expect(sum(str)).toBe(0)
+})
+test('probably ignore the first  input if greater than 1000', () => {
+    const str1 = '10'
+    const str2 = '1010';
+    expect(sum((str1 + "," + str2))).toBe(+str1)
+})
+test('probably ignore the first  input if greater than 1000', () => {
+    const str1 = '1100'
+    const str2 = '100';
+    expect(sum((str1 + "," + str2))).toBe(+str2)
+})
