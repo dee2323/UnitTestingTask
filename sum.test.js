@@ -15,3 +15,38 @@ test('probably  when the length is one', () => {
     const str = '1'
     expect(sum(str)).toBe(+str)
 })
+test('problaly reject adding one negative number ', () => {
+    const str = '-1'
+    try {
+        sum(str);
+    } catch (e) {
+        expect(e.message).toBe('negatives not allowed,you entered ' + str);
+    }
+})
+test('probably two negatives not allowed', () => {
+    const str1 = '-1'
+    const str2 = '-2'
+    try {
+        sum(str1 + "," + str2);
+    } catch (e) {
+        expect(e.message).toBe('negatives not allowed,you entered ' + str1 + " " + str2);
+    }
+})
+test('probably the first negative number not allowed', () => {
+    const str1 = '-1'
+    const str2 = '2'
+    try {
+        sum(str1 + "," + str2);
+    } catch (e) {
+        expect(e.message).toBe('negatives not allowed,you entered ' + str1);
+    }
+})
+test('probably the secound negative number not allowed', () => {
+    const str1 = '11'
+    const str2 = '-2'
+    try {
+        sum(str1 + "," + str2);
+    } catch (e) {
+        expect(e.message).toBe('negatives not allowed,you entered ' + str2);
+    }
+})
